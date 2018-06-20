@@ -34,7 +34,14 @@ class OrderController extends Controller
     }
     public function Order(){
     }
-     public function like($id,$status)
+    public function like($id,$status)
+    {
+        $order = Order::findOrFail($id);
+        $data['status'] = $status == 2 ? 3 : 2;
+        $order->update($data);
+        return back();
+    }
+    public function love($id,$status)
     {
         $order = Order::findOrFail($id);
         $data['status'] = $status == 2 ? 3 : 2;
