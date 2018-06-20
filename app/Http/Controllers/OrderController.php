@@ -32,4 +32,6 @@ class OrderController extends Controller
         $orderDetail = $order->orderDetail;
         return view('PageStore.detailOrder', compact('order','orderDetail'));
     }
+    public function Order(){
+    }
 }
