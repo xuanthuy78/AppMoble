@@ -62,4 +62,11 @@ class OrderController extends Controller
         $order->update($data);
         return back();
     }
+    public function like($id,$status)
+    {
+        $order = Order::findOrFail($id);
+        $data['status'] = $status == 2 ? 3 : 2;
+        $order->update($data);
+        return back();
+    }
 }
